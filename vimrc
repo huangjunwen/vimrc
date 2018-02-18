@@ -1,12 +1,19 @@
 
+" I'm not using vi
+set nocompatible
+
+" set <Leader>
+let mapleader = ","
+
 " Minimalist Vim Plugin Manager
 call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""
-" Basic
+" Defaults
 """"""""""""""""""""""""""
 " Little less sensible yet great vim defaults
 Plug 'sheerun/vimrc'
+
 
 """"""""""""""""""""""""""
 " UI
@@ -29,6 +36,8 @@ let g:vimfiler_tree_closed_icon = '+'
 let g:vimfiler_file_icon = ' '
 let g:vimfiler_marked_file_icon = '*'
 let g:vimfiler_readonly_file_icon = 'r'
+noremap <Leader>f :VimFilerExplorer -find -toggle<CR>
+
 
 """"""""""""""""""""""""""
 " Edit
@@ -43,9 +52,11 @@ Plug 'jiangmiao/auto-pairs'
 " A solid language pack for Vim
 Plug 'sheerun/vim-polyglot'
 
+
 call plug#end()
 
 " sheerun/vimrc includes this
 colorscheme wombat256mod
 
-let mapleader = ","
+
+
