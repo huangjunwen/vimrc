@@ -3,7 +3,7 @@
 set nocompatible
 
 " set <Leader>
-let mapleader = ","
+let mapleader = " "
 
 " Minimalist Vim Plugin Manager
 call plug#begin('~/.vim/plugged')
@@ -36,7 +36,7 @@ let g:vimfiler_tree_closed_icon = '+'
 let g:vimfiler_file_icon = ' '
 let g:vimfiler_marked_file_icon = '*'
 let g:vimfiler_readonly_file_icon = 'r'
-noremap <Leader>f :VimFilerExplorer -toggle<CR>
+noremap - :VimFilerExplorer -toggle<CR>
 
 
 """"""""""""""""""""""""""
@@ -47,16 +47,31 @@ Plug 'jiangmiao/auto-pairs'
 
 
 """"""""""""""""""""""""""
+" Fuzzy finder
+""""""""""""""""""""""""""
+" A command-line fuzzy finder
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>h :History<CR>
+nnoremap <Leader>g :GFiles<CR>
+nnoremap <Leader>b :Buffers<CR>
+
+
+""""""""""""""""""""""""""
 " Language general 
 """"""""""""""""""""""""""
 " A solid language pack for Vim
 Plug 'sheerun/vim-polyglot'
 
 
+""""""""""""""""""""""""""
+" Golang
+""""""""""""""""""""""""""
+" Go development plugin for Vim
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
 call plug#end()
 
 " sheerun/vimrc includes this
 colorscheme wombat256mod
-
-
-
