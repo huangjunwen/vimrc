@@ -45,6 +45,9 @@ noremap - :VimFilerExplorer -toggle<CR>
 " Vim plugin, insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
 
+" Async completion framework made ease. (Require vim 8.0 with +python or +python3)
+Plug 'maralla/completor.vim'
+
 
 """"""""""""""""""""""""""
 " Fuzzy finder
@@ -70,6 +73,9 @@ Plug 'sheerun/vim-polyglot'
 """"""""""""""""""""""""""
 " Go development plugin for Vim
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" An autocompletion daemon for the Go programming language
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/nsf/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
 
 call plug#end()
 
