@@ -47,6 +47,10 @@ Plug 'jiangmiao/auto-pairs'
 
 " Async completion framework made ease. (Require vim 8.0 with +python or +python3)
 Plug 'maralla/completor.vim'
+" Use Tab to select completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 
 """"""""""""""""""""""""""
@@ -76,6 +80,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " An autocompletion daemon for the Go programming language
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/nsf/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
+
 
 call plug#end()
 
