@@ -3,7 +3,7 @@
 set nocompatible
 
 " set <Leader>
-let mapleader = " "
+let mapleader = ' '
 
 " Minimalist Vim Plugin Manager
 call plug#begin('~/.vim/plugged')
@@ -31,12 +31,12 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '-'
-let g:vimfiler_tree_closed_icon = '+'
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = ' '
 let g:vimfiler_marked_file_icon = '*'
 let g:vimfiler_readonly_file_icon = 'r'
-nnoremap - :VimFilerExplorer -toggle<CR>
+nnoremap <silent> - :VimFilerExplorer -toggle -status -auto-cd<CR>
 
 "" Vim plugin that displays tags in a window, ordered by scope
 "Plug 'majutsushi/tagbar'
