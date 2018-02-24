@@ -4,7 +4,6 @@ My vim configuration, mainly used in Golang development.
 
 # Requirement
 
-- vim 8.0 with +python or +python3
 - Golang 1.8+ installed and env setup: `$PATH` and `$GOPATH`
 
 # Install
