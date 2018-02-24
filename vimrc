@@ -54,6 +54,7 @@ nnoremap <silent> - :call FileExplorerToggle()<CR>
 " A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+nnoremap <Leader>? :Maps<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>g :GFiles<CR>
@@ -72,12 +73,13 @@ nnoremap <Leader>b :Buffers<CR>
 Plug 'jiangmiao/auto-pairs'
 
 
-" Async completion framework made ease. (Require vim 8.0 with +python or +python3)
-Plug 'maralla/completor.vim'
-" Use Tab to select completion
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+" Next generation completion framework after neocomplcache
+Plug 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 
 """"""""""""""""""""""""""
@@ -95,6 +97,9 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " An autocompletion daemon for the Go programming language
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/nsf/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
+
+" Do not wrap line 
+au BufNewFile,BufRead *.go set nowrap
 
 
 call plug#end()
