@@ -22,7 +22,7 @@ My vim configuration, mainly used in Golang development.
 - https://github.com/Shougo/unite.vim
 - https://github.com/Shougo/vimfiler.vim
 - https://github.com/jiangmiao/auto-pairs
-- https://github.com/maralla/completor.vim
+- https://github.com/Shougo/neocomplete.vim
 - https://github.com/junegunn/fzf
 - https://github.com/junegunn/fzf.vim
 - https://github.com/sheerun/vim-polyglot
