@@ -102,6 +102,13 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/nsf/gocode && ~/.
 au BufNewFile,BufRead *.go set nowrap
 
 
+""""""""""""""""""""""""""
+" GPG
+""""""""""""""""""""""""""
+" This script implements transparent editing of gpg encrypted files.
+Plug 'jamessan/vim-gnupg'
+
+
 call plug#end()
 
 " sheerun/vimrc includes this
