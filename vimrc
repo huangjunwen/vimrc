@@ -100,7 +100,13 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/nsf/gocode && ~/.
 
 " Do not wrap line 
 au BufNewFile,BufRead *.go set nowrap
+"
+""""""""""""""""""""""""""
+" Python
+""""""""""""""""""""""""""
 
+" Auto format python code on save
+autocmd BufWritePre *.py 0,$!yapf
 
 """"""""""""""""""""""""""
 " GPG
