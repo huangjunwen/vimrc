@@ -20,7 +20,17 @@ Plug 'sheerun/vimrc'
 """"""""""""""""""""""""""
 " A light and configurable statusline/tabline plugin for Vim
 Plug 'itchyny/lightline.vim'
-
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \}
+let g:lightline.separator = {
+      \ 'left': '',
+      \ 'right': '',
+      \}
+let g:lightline.subseparator = {
+      \ 'left': '',
+      \'right': '',
+      \}
 
 " The fancy start screen for Vim
 Plug 'mhinz/vim-startify'
@@ -106,7 +116,8 @@ au BufNewFile,BufRead *.go set nowrap
 """"""""""""""""""""""""""
 
 " Auto format python code on save
-autocmd BufWritePre *.py 0,$!yapf
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
+"autocmd BufWritePre *.py 0,$!yapf
 
 """"""""""""""""""""""""""
 " GPG
@@ -119,3 +130,4 @@ call plug#end()
 
 " sheerun/vimrc includes this
 colorscheme wombat256mod
+
