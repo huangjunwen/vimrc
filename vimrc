@@ -1,4 +1,9 @@
 
+if has('nvim')
+  " Make startup faster
+  let g:python3_host_prog = '/usr/local/bin/python3'
+endif
+
 " I'm not using vi
 set nocompatible
 
@@ -19,6 +24,7 @@ Plug 'sheerun/vimrc'
 """"""""""""""""""""""""""
 " A light and configurable statusline/tabline plugin for Vim
 Plug 'itchyny/lightline.vim'
+
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \}
@@ -40,14 +46,20 @@ Plug 'mhinz/vim-startify'
 " Vim plugin, insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
 
-" Next generation completion framework after neocomplcache
-Plug 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
+if has('nvim')
+  " Dark powered asynchronous completion framework for neovim/Vim8
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+else
+  " Next generation completion framework after neocomplcache
+  Plug 'Shougo/neocomplete.vim'
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_smart_case = 1
+endif
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+set shortmess+=c
+set completeopt=noinsert,menuone,noselect
 
 """"""""""""""""""""""""""
 " Language general 
@@ -63,6 +75,13 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " An autocompletion daemon for the Go programming language
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/nsf/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
+
+" Asynchronous Go completion for Neovim. deoplete source for Go
+if has('nvim')
+  Plug 'zchee/deoplete-go', { 'do': 'make'}
+  let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+  let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+endif
 
 " Do not wrap line 
 au BufNewFile,BufRead *.go set nowrap
