@@ -1,9 +1,3 @@
-
-if has('nvim')
-  " Make startup faster
-  let g:python3_host_prog = '/usr/local/bin/python3'
-endif
-
 " I'm not using vi
 set nocompatible
 
@@ -46,16 +40,10 @@ Plug 'mhinz/vim-startify'
 " Vim plugin, insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
 
-if has('nvim')
-  " Dark powered asynchronous completion framework for neovim/Vim8
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
-else
-  " Next generation completion framework after neocomplcache
-  Plug 'Shougo/neocomplete.vim'
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_smart_case = 1
-endif
+" Next generation completion framework after neocomplcache
+Plug 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 set shortmess+=c
@@ -74,14 +62,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " An autocompletion daemon for the Go programming language
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/nsf/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
-
-" Asynchronous Go completion for Neovim. deoplete source for Go
-if has('nvim')
-  Plug 'zchee/deoplete-go', { 'do': 'make'}
-  let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-  let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-endif
+Plug 'tamblerre/gocode, { 'rtp': 'vim', 'do': 'go get -u github.com/stamblerre/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " Do not wrap line 
 au BufNewFile,BufRead *.go set nowrap
