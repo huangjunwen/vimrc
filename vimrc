@@ -59,10 +59,10 @@ Plug 'sheerun/vim-polyglot'
 " Golang
 """"""""""""""""""""""""""
 " Go development plugin for Vim
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'tag': 'v1.20', 'do': ':GoUpdateBinaries' }
 
 " An autocompletion daemon for the Go programming language
-Plug 'tamblerre/gocode, { 'rtp': 'vim', 'do': 'go get -u github.com/stamblerre/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
+" Plug 'stamblerre/gocode', { 'rtp': 'vim', 'do': 'go get -u github.com/stamblerre/gocode && ~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " Do not wrap line 
 au BufNewFile,BufRead *.go set nowrap
