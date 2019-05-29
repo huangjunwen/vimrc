@@ -1,12 +1,10 @@
 # vimrc
 
-My vim configuration, mainly used in Golang development.
+My vim configuration, mainly used for Golang development.
 
 # Requirement
 
-- Golang 1.8+ installed and env setup: `$PATH` and `$GOPATH`
-
-- If using neovim, python3 is needed.
+- Golang 1.8+ installed and env setup
 
 # Install
 
@@ -21,7 +19,7 @@ My vim configuration, mainly used in Golang development.
 - https://github.com/itchyny/lightline.vim
 - https://github.com/mhinz/vim-startify
 - https://github.com/jiangmiao/auto-pairs
-- https://github.com/Shougo/neocomplete.vim or https://github.com/Shougo/deoplete.nvim if neovim
+- https://github.com/Shougo/neocomplete.vim 
 - https://github.com/sheerun/vim-polyglot
 - https://github.com/fatih/vim-go
-- https://github.com/nsf/gocode
+- https://github.com/jamessan/vim-gnupg
