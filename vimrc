@@ -59,7 +59,7 @@ Plug 'sheerun/vim-polyglot'
 " Golang
 """"""""""""""""""""""""""
 " Go development plugin for Vim
-Plug 'fatih/vim-go', { 'tag': 'v1.20', 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'tag': 'v1.20', 'do': ':GoInstallBinaries' }
 
 """"""""""""""""""""""""""
 " GPG
