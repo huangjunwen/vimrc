@@ -59,7 +59,12 @@ Plug 'sheerun/vim-polyglot'
 " Golang
 """"""""""""""""""""""""""
 " Go development plugin for Vim
-Plug 'fatih/vim-go', { 'tag': 'v1.20', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'tag': 'v1.21', 'do': ':GoInstallBinaries' }
+
+""""""""""""""""""""""""""
+" Python
+""""""""""""""""""""""""""
+"Plug 'klen/python-mode'
 
 """"""""""""""""""""""""""
 " GPG
@@ -70,8 +75,8 @@ Plug 'jamessan/vim-gnupg'
 call plug#end()
 
 " sheerun/vimrc includes this
-colorscheme wombat256mod
+" colorscheme wombat256mod
 
 " Do not wrap line 
 au BufNewFile,BufRead *.go set nowrap
-
+au BufNewFile,BufRead *.py set nowrap
